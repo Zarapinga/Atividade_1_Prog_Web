@@ -20,7 +20,6 @@ Para garantir um código limpo, performático e aderente às boas práticas da w
 * **Arquitetura de Três Camadas:** Separação estrita. O `index.html` contém apenas HTML Semântico (`<header>`, `<main>`, `<footer>`), o `styles.css` lida exclusivamente com a apresentação e responsividade básica, e o `script.js` concentra toda a regra de negócios e manipulação do DOM.
 * **Manipulação Dinâmica do DOM:** Em vez de manter elementos ocultos no HTML, os itens do jogo são criados e destruídos em tempo de execução utilizando `document.createElement()`, `appendChild()` e `removeChild()`. Isso simula o comportamento de *instantiation* comum em desenvolvimento de jogos e mantém a árvore do DOM enxuta.
 * **Otimização de Interação (`mousedown` vs `click`):** Para jogos de ritmo acelerado, o evento padrão de `click` pode falhar se o usuário mover o mouse entre o pressionar e o soltar do botão. Optou-se pelo uso do ouvinte de evento `mousedown` para garantir responsividade imediata.
-* **Prevenção de Seleção de Texto:** O uso intensivo de cliques rápidos poderia acionar a seleção de texto nativa do navegador (highlighting). Isso foi neutralizado no CSS através da propriedade `user-select: none`.
 * **Posicionamento Absoluto em Contêiner Relativo:** O tabuleiro do jogo foi configurado com `position: relative` e `overflow: hidden`, permitindo que os itens gerados pelo JS recebam coordenadas absolutas (`top` e `left`) de forma aleatória, sem quebrar o fluxo da página ou gerar barras de rolagem.
 
 ---
