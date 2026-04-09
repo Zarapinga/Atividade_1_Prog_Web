@@ -35,7 +35,7 @@ function iniciarJogo() {
     elPontuacao.textContent = pontuacao;
     elTempo.textContent = tempoRestante;
     elMensagem.style.display = 'none';
-    elPainelPedidos.style.display = 'block'; // Mostra a fila de pedidos
+    elPainelPedidos.style.display = 'block';
 
     btnIniciar.disabled = true;
     btnIniciar.style.backgroundColor = '#ccc';
@@ -103,7 +103,6 @@ function criarItemNaTela(dadosItem) {
     const pedidoDiv = document.createElement('div');
     pedidoDiv.classList.add('pedido', dadosItem.classe);
 
-    // Se for usar imagens PNG do seu /assets no CSS, apague a linha abaixo:
     pedidoDiv.textContent = dadosItem.emoji;
 
     // Guardamos qual é o tipo desse item escondido no HTML
@@ -114,11 +113,10 @@ function criarItemNaTela(dadosItem) {
     pedidoDiv.style.left = Math.floor(Math.random() * maxX) + 'px';
     pedidoDiv.style.top = Math.floor(Math.random() * maxY) + 'px';
 
-    // A mágica acontece aqui: ao clicar no item
     pedidoDiv.addEventListener('mousedown', function() {
         if (!jogoAtivo) return;
 
-        // Verifica se o item clicado é igual ao primeiro da Fila (o alvo)
+        // Verifica se o item clicado é igual ao primeiro da Fila
         if (this.dataset.tipo === filaPedidos[0].id) {
             pontuacao += 15;
             elPontuacao.textContent = pontuacao;
@@ -129,7 +127,6 @@ function criarItemNaTela(dadosItem) {
             adicionarPedidoNaFila();
             atualizarTelaFila();
         } else {
-            // ERROU! (Clicou em batata quando era pra ser refri)
             pontuacao -= 5;
             if(pontuacao < 0) pontuacao = 0; // Não deixa ficar negativo
             elPontuacao.textContent = pontuacao;

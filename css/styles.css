@@ -1,6 +1,6 @@
 /* Reset básico e tipografia */
 body {
-    font-family: Arial, sans-serif; /* Pode trocar para uma fonte pixel/retro depois */
+    font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     margin: 0;
     padding: 0;
@@ -15,7 +15,7 @@ body {
     padding-bottom: 20px;
 }
 
-/* Semântica e Cores (Estilo 80s/90s) */
+/* Semântica e Cores */
 header {
     background-color: #b33939; /* Bordô escuro */
     color: #FFF;
@@ -38,7 +38,7 @@ header {
     margin: 20px auto;
     background-color: #dfe4ea;
     border: 4px dashed #ced6e0;
-    position: relative; /* Crucial para o JS posicionar os itens absolutos aqui dentro */
+    position: relative;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -86,7 +86,6 @@ footer {
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     transition: transform 0.1s;
 
-    /* Centralizando o Emoji (Remova isso quando for usar imagens reais) */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,20 +98,16 @@ footer {
     transform: scale(0.85); /* Efeito de aperto no clique */
 }
 
-/* Quando você for usar suas imagens do /assets, descomente as linhas abaixo e apague os emojis no JS */
+
 .item-burger {
-    /* background-image: url('../assets/burger.png'); */
-    /* background-size: cover; */
     border: 3px solid #ff9f43;
 }
 
 .item-fries {
-    /* background-image: url('../assets/fries.png'); */
     border: 3px solid #feca57;
 }
 
 .item-soda {
-    /* background-image: url('../assets/soda.png'); */
     border: 3px solid #54a0ff;
 }
 
